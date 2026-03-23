@@ -117,22 +117,11 @@ def load_env_var(var_name: str, default_value: Any = None, toml_section: str = N
     value = os.getenv(var_name)
 
     if value is None:
-        data = toml.load(".streamlit/secrets.toml")
-
-        if toml_section and toml_section in data:
-            value = data[toml_section].get(var_name)
-        else:
-            value = data.get(var_name)
-
-    if value is None:
         if default_value is not None:
             return default_value
         else:
-            raise ValueError(
-                f"Environment variable '{var_name}' not found in .streamlit/config.toml or environment variables."
-            )
+            raise ValueError(f"Environment variable '{var_name}' not found in  environment variables.")
     elif is_bool:
         value = value.lower() == "true" if isinstance(value, str) else bool(value)
 
     return value
-

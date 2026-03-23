@@ -10,7 +10,7 @@ import concurrent.futures
 import unicodedata
 import re
 
-from src.utils import extract_date
+from politifact_scraping.utils import extract_date
 
 
 class PolitifactScraper:

@@ -10,7 +10,7 @@ import dotenv
 
 dotenv.load_dotenv()
 
-from src.utils import load_env_var
+from politifact_scraping.utils import load_env_var
 
 LOG_PATH = f"{load_env_var('LOCAL_DB')}/logs"
 

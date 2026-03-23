@@ -1,13 +1,13 @@
 if __name__ == "__main__":
-    from src.scraping import PolitifactScraper
+    from politifact_scraping.scraping import PolitifactScraper
 
     # Example with init and end dates, if not provided, it will scrape all the data available
     scraper = PolitifactScraper(init_date="2025-12-01", end_date="2026-03-31")
 
     # Scrape the data
-    # articles = scraper.scrape_all_articles()
+    articles = scraper.scrape_all_articles()
 
-    # print(articles[0])
+    print(articles[0])
 
     speakers = scraper.scrape_all_speakers()
 

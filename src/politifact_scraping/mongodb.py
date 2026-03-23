@@ -16,9 +16,9 @@ from typing import Any
 from bson import ObjectId
 from datetime import datetime
 
-from src.scraping import PolitifactScraper
-from src.logging import LOG_POLITIFACT_SCRAPING, LOG_DELETED_MONGODB_DOCS, LOG_MONGODB
-from src.utils import load_env_var
+from politifact_scraping.scraping import PolitifactScraper
+from politifact_scraping.logging_config import LOG_POLITIFACT_SCRAPING, LOG_DELETED_MONGODB_DOCS, LOG_MONGODB
+from politifact_scraping.utils import load_env_var
 
 
 class PyObjectId(str):
@@ -323,7 +323,6 @@ class MongoDBConnection:
         # Delete documents with null and NaN values from the collection coll_name
         delete_value(value=None)
         delete_value(value=np.nan)
-
 
 
 class PolitiFactDB(MongoDBConnection):
