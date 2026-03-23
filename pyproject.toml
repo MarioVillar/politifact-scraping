@@ -10,7 +10,7 @@ readme = "README.md"
 license = "CC-BY-4.0"
 requires-python = ">=3.10"
 authors = [
-    { name = "villarmario" },
+    { name = "mariovillar" },
 ]
 keywords = ["politifact", "scraping", "fact-checking", "web-scraping", "dataset"]
 classifiers = [
@@ -37,9 +37,9 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/villarmario/politifact-scraping"
-Repository = "https://github.com/villarmario/politifact-scraping"
-Issues = "https://github.com/villarmario/politifact-scraping/issues"
+Homepage = "https://github.com/mariovillar/politifact-scraping"
+Repository = "https://github.com/mariovillar/politifact-scraping"
+Issues = "https://github.com/mariovillar/politifact-scraping/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
