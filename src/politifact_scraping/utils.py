@@ -5,7 +5,6 @@ Utility functions for the project.
 import os
 import re
 from datetime import datetime
-import toml
 import locale
 from contextlib import contextmanager
 from typing import Any
@@ -98,20 +97,20 @@ def extract_date(text: str, language: str = "english", date_format: str = "%B %d
     return date
 
 
-def load_env_var(var_name: str, default_value: Any = None, toml_section: str = None, is_bool: bool = False) -> Any:
+def load_env_var(var_name: str, default_value: Any = None, is_bool: bool = False) -> Any:
     """
-    Load an environment variable or a value from the .streamlit/config.toml file.
+    Load an environment variable.
 
     :param var_name: The name of the environment variable to load.
     :type var_name: str
     :param default_value: The default value to return if the environment variable is not found. Defaults to None.
     :type default_value: Any, optional
-    :param toml_section: The section in the .streamlit/config.toml file to look for the variable. If None, it will look in the root section. Defaults to None
-    :type toml_section: str, optional
+    :param is_bool: Whether the environment variable should be treated as a boolean. Defaults to False.
+    :type is_bool: bool, optional
 
-    :raises ValueError: If the environment variable is not found in either the environment variables or the .streamlit/config.toml file and no default value is provided.
+    :raises ValueError: If the environment variable is not found and no default value is provided.
 
-    :return: The value of the environment variable or the value from the .streamlit/config.toml file.
+    :return: The value of the environment variable.
     :rtype: Any
     """
     value = os.getenv(var_name)
